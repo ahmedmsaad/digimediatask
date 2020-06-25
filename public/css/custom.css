@@ -1,0 +1,140 @@
+.main-container{
+    display: flex;
+}
+.dashboard-menu{
+    width: 25%;
+}
+.contectDashboard{
+    margin: 10px;
+    width: 80%;
+    right: 0;
+    padding: 0;
+    position: fixed;
+    /* float: right;*/
+    overflow-y: scroll;
+    height: 100%;
+    margin-right: 0px;
+    padding-top: 76px !important;
+}
+.close-popup{
+    text-align: right;
+    margin: 0;
+    padding: 5px;
+    background: #d7d9da;
+    font-size: 20px;
+}
+
+.clientInfo th{
+    width: 20%;
+}
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.navbar {
+    z-index: 10;
+}
+.vertical-nav {
+    min-width: 17rem;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+    z-index: 20;
+  }
+  
+  .page-content {
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s;
+  }
+  
+  /* for toggle behavior */
+  
+  #sidebar.active {
+    margin-left: -17rem;
+  }
+  
+  #content.active {
+    width: 100%;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -17rem;
+    }
+    #sidebar.active {
+      margin-left: 0;
+    }
+    #content {
+      width: 100%;
+      margin: 0;
+    }
+    #content.active {
+      margin-left: 17rem;
+      width: calc(100% - 17rem);
+    }
+  }
+  
+  /*
+  *
+  * ==========================================
+  * FOR DEMO PURPOSE
+  * ==========================================
+  *
+  */
+  
+  body {
+    /*background: #599fd9;
+    background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+    background: linear-gradient(to right, #599fd9, #c2e59c);*/
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+  }
+  
+  .text-uppercase {
+    letter-spacing: 0.1em;
+  }
+  
+  .text-gray {
+    color: #aaa;
+  }
+
+
+.card-header .addclient{
+    float: right;
+}
+
+.pop-up{
+    position: absolute;
+    background: #0000007a;
+    width: 100%;
+    top: 0;
+    padding: 10%;
+    display: none;
+}
+.pop-up form{
+    background: #f8f9fa;
+    padding: 15px 10%;
+}
+
+.addclient{
+    color: blue;
+    cursor: pointer;
+}
+.close-popup{
+    color: blue;
+    cursor: pointer;
+}
