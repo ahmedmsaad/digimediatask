@@ -25,9 +25,9 @@ Route::get('/clients', 'clientsController@show')->name('clients');
 Route::post('/addclientform', 'clientsController@store')->name('client.store');
 Route::post('/updateClient', 'clientsController@update')->name('client.update');
 Route::post('/deleteClient', 'clientsController@delete');
-Route::get('/getClient', 'clientsController@fetchClient');
+Route::get('/getClient/{id}', 'clientsController@fetchClient');
 
-
+ 
 Route::get('/userservecies/{id}', 'servicesController@getServicesByUserId');
 Route::post('/addService', 'servicesController@store')->name('service.store');
 Route::post('/updateService', 'servicesController@update')->name('service.update');

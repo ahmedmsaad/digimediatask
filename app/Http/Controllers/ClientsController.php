@@ -68,10 +68,10 @@ class ClientsController extends Controller
      * @param  \App\clients  $clients
      * @return \Illuminate\Http\Response
      */
-    public function fetchClient(Request $request)
+    public function fetchClient($id)
     {
         //$client =DB::select('select * from clients where id = ?', array($id));
-        $client = clients::where('id','=',$request->id)->first();
+        $client = clients::where('id','=',$id)->first();
         return response()->json(['client' => $client]);
     }
     
