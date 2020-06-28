@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/clients', 'clientsController@show')->name('clients');
+Route::get('/clients', 'clientsController@show')->name('clients')->middleware('auth');;
 Route::post('/addclientform', 'clientsController@store')->name('client.store');
 Route::post('/updateClient', 'clientsController@update')->name('client.update');
 Route::post('/deleteClient', 'clientsController@delete');
