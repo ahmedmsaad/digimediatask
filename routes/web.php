@@ -28,8 +28,8 @@ Route::post('/deleteClient', 'clientsController@delete');
 Route::get('/getClient/{id}', 'clientsController@fetchClient');
 
  
-Route::get('/userservecies/{id}', 'servicesController@getServicesByUserId');
-Route::post('/addService', 'servicesController@store')->name('service.store');
-Route::post('/updateService', 'servicesController@update')->name('service.update');
-Route::post('/deleteService', 'servicesController@delete');
-Route::get('/getService', 'servicesController@fetchService');
+Route::get('/userservecies/{id}', 'ServicesController@getServicesByUserId');
+Route::post('/addService', 'ServicesController@store')->name('service.store');
+Route::post('/updateService', 'ServicesController@update')->name('service.update');
+Route::post('/deleteService', 'ServicesController@delete');
+Route::get('/getService', 'ServicesController@fetchService');
