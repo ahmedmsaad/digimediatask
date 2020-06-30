@@ -21,11 +21,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/clients', 'clientsController@show')->name('clients')->middleware('auth');;
-Route::post('/addclientform', 'clientsController@store')->name('client.store');
-Route::post('/updateClient', 'clientsController@update')->name('client.update');
-Route::post('/deleteClient', 'clientsController@delete');
-Route::get('/getClient/{id}', 'clientsController@fetchClient');
+Route::get('/clients', 'ClientsController@show')->name('clients')->middleware('auth');;
+Route::post('/addclientform', 'ClientsController@store')->name('client.store');
+Route::post('/updateClient', 'ClientsController@update')->name('client.update');
+Route::post('/deleteClient', 'ClientsController@delete');
+Route::get('/getClient/{id}', 'ClientsController@fetchClient');
 
  
 Route::get('/userservecies/{id}', 'ServicesController@getServicesByUserId');
