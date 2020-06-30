@@ -170,7 +170,7 @@
         var id=$(this).parent().parent().attr("clientid")*1;
         console.log(id);
         $.ajax({
-          url: "/digimedia/getClient/"+id,
+          url: "/digimediatask/getClient/"+id,
           type:"GET",
           success:function(response){
             console.log(response);
@@ -192,7 +192,7 @@
         var id=$(this).parent().parent().attr("clientid")*1;
         console.log(id);
         $.ajax({
-          url: "/digimedia/deleteClient",
+          url: "/digimediatask/deleteClient",
           type:"POST",
           data:{
             "_token": "{{ csrf_token() }}",

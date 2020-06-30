@@ -53,7 +53,7 @@
                                                 </td>
 
                                                 <td class="table-text">
-                                                    <a href="/digimedia/deleteService/{{$service->id}}" class="deleteService">delete</a>
+                                                    <a href="/digimediatask/deleteService/{{$service->id}}" class="deleteService">delete</a>
                                                     <button class="updateService">update</button>
                                                 </td>
                                                 
@@ -147,7 +147,7 @@
         var id=$(this).parent().parent().attr("serviceid")*1;
         console.log(id);
         $.ajax({
-          url: "/digimedia/getService/"+id,
+          url: "/digimediatask/getService/"+id,
           type:"GET",
           success:function(response){
             console.log(response);
