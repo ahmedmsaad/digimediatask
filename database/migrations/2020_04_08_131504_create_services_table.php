@@ -20,9 +20,7 @@ class CreateServicesTable extends Migration
             $table->string('Link'); 
             $table->string('Description');
 
-            $table -> integer('clients_id') -> unsigned() -> index() ->  nullable();
-            $table -> foreign('clients_id') -> references('id') -> on('clients');
-
+            $table -> integer('user_id') -> unsigned() -> index() ->  nullable();
             $table->timestamps();
         });
     }

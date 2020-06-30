@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
+
 use App\clients;
+use App\User;
 use App\services;
 use Illuminate\Http\Request;
 
@@ -44,7 +47,7 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        $client=clients::find($request->clientId);
+        //$user=auth()->user()->id;
 
         $service = new services;
         $service->Title = $request->Title;
@@ -52,14 +55,15 @@ class ServicesController extends Controller
         $service->Type= $request->Type;
         $service->Link= $request->Link;
 
-        $client->services()->save($service);
-        return redirect("/userservecies/{$request->clientId}");
+        auth()->user()->services()->save($service);
+
+        return redirect("/services");
     }
-    public function delete(Request $request)
+    public function delete($id)
     {
-        $service=services::findOrFail($request->id)->first();
-        services::findOrFail($request->id)->delete();
-        return redirect("/userservecies/{$service->clients_id}");
+        //$service=services::findOrFail($id)->first();
+        services::findOrFail($id)->delete();
+        return redirect("/services");    
     }
 
     public function fetchService(Request $request)
@@ -78,7 +82,10 @@ class ServicesController extends Controller
      */
     public function show(services $services)
     {
-        //
+        // 
+        $services = DB::table('services')->get();
+
+        return view("/services",compact('services'));
     }
 
     /**
@@ -101,13 +108,16 @@ class ServicesController extends Controller
      */
     public function update(Request $request)
     {
-        $service = services::where('id','=',$request->serviceId)->first();
+        $service = services::where('id','=',$request->id)->first();
         $service["Title"]=$request->Title;
         $service["Description"]=$request->Description;
         $service["Type"]=$request->Type;
         $service["Link"]=$request->Link;
+        $service["user_id"]=auth()->user()->id;
+
         $service->save();
-        return redirect("/userservecies/{$request->clientId}");    }
+        return redirect("/services");    
+    }
 
     /**
      * Remove the specified resource from storage.

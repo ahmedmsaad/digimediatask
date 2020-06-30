@@ -31,5 +31,6 @@ Route::get('/getClient/{id}', 'ClientsController@fetchClient');
 Route::get('/userservecies/{id}', 'ServicesController@getServicesByUserId');
 Route::post('/addService', 'ServicesController@store')->name('service.store');
 Route::post('/updateService', 'ServicesController@update')->name('service.update');
-Route::post('/deleteService', 'ServicesController@delete');
-Route::get('/getService', 'ServicesController@fetchService');
+Route::get('/deleteService/{id}', 'ServicesController@delete');
+Route::get('/getService/{id}', 'ServicesController@fetchService');
+Route::get('/services', 'ServicesController@show')->name('services')->middleware('auth');;

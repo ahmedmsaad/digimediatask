@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class services extends Model
 {
-    public function client() {
-        return $this -> belongsTo(clients::class);
+    public function user() {
+        return $this -> belongsTo(User::class,'user_id','id');
     }
 }
